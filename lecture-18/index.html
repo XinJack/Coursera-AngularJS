@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="ShoppingListApp">
+	<head>
+		<title>Filtered ng-repeat</title>
+		<script src="../angular.min.js"></script>
+		<script src="./app.js"></script>
+	</head>
+	<body>
+		<h1>Filtered ng-repeat</h1>
+		<div ng-controller="ShoppingListController">
+			<input type="text" ng-model="searchString">
+			<ul>
+				<li ng-repeat="item in shoppingList1 | filter: searchString">{{item}}</li>
+			</ul>
+		</div>
+	</body>
+</html>
