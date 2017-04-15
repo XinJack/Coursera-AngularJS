@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="CounterApp">
+<head>
+	<title>Digest Cycle</title>
+	<script src="../angular.js"></script>
+	<script src="app.js"></script>
+</head>
+<body>
+	<div ng-controller="CounterController">
+		<h1>The Digest Cycle</h1>
+		<div><button ng-click="logWatchers()">Log # of Watchers</button></div>
+		<div><button ng-click="upCounterOnce()">Up Once Counter (once)</button></div>
+		<div><button ng-click="upCounter()">increment Counter</button></div>
+		<div>
+			Counter: {{Counter}}<br>
+			counter: {{counter}}
+		</div>
+	</div>
+</body>
+</html>

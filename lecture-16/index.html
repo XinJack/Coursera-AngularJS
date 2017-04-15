@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="BindApp">
+<head>
+	<title>1-way, 2-way, one-time binding</title>
+	<script src="../angular.min.js"></script>
+	<script src="./app.js"></script>
+</head>
+<body>
+	<div ng-controller="BindController">
+		<h1>1-way, 2-way, one-time binding</h1>
+		<div><button ng-click="logNumberOfWatchers()"># of watchers</button></div>
+		<div><button ng-click="setFullName()">set full name</button></div>
+		<p>My full name is: {{::fullName}}</p>
+		<div><button ng-click="logFullName()">log full name</button></div>
+		<div><button ng-click="logFirstName()">log first name</button></div>
+		<div><input type="text" ng-model="firstName"></div>
+	</div>
+</body>
+</html>

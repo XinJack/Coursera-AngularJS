@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="MsgApp">
+<head>
+	<title>Expression and Interpolation</title>
+	<script src="../angular.js"></script>
+	<script src="app.js"></script>
+</head>
+<body>
+	<h1>Expression and Interpolation</h1>
+	<div ng-controller="MsgController">
+		Message from {{name}} is:<br>
+		Original message: {{displayMsg()}}<br>
+		Replace message: {{replaceMsg()}}<br>
+		True: {{replaceMsg() | truth: 'very': 'very very'}}<br>
+		BIG TRUE: {{replaceMsg() | truth: 'very': 'very very' | uppercase}}
+		{{errorMessageWontShowUp}}
+		<div>
+			<button ng-click="feed();">Feed {{name}}</button>
+			The cost is {{cost | currency: "###": 3}}
+			<br>
+			<img ng-src="./images/yaakov_{{currentState}}.png" />
+		</div>
+	</div>
+</body>
+</html>
