@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="ShoppingListApp">
+	<head>
+		<title>Custom Services with .provider()</title>
+		<script src="../angular.min.js"></script>
+		<script src="./app.js"></script>
+	</head>
+	<body>
+		<h1>Custom Services with .provider()</h1>
+		<div ng-controller="ShoppingListController as list">
+			<input type="text" ng-model="list.itemName" placeholder="item name">
+			<input type="text" ng-model="list.itemQuantity" placeholder="item quantity">
+			<button ng-click="list.addItem()">Add Item</button>
+			<div>
+				<ol>
+					<li ng-repeat="item in list.items">
+						{{item.itemQuantity}} of {{item.itemName}}
+						<button ng-click="list.remove($index)">Remove Item</button>
+					</li>
+				</ol>
+			</div>
+			<!-- <div ng-if="list.errorMsg">
+				Error: {{list.errorMsg}}
+			</div> -->
+			<!-- <div ng-show="list.errorMsg">
+				Error: {{list.errorMsg}}
+			</div> -->
+			<div ng-hide="!list.errorMsg">
+				Error: {{list.errorMsg}}
+			</div>
+		</div>
+	</body>
+</html>

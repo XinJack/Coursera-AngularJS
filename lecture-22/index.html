@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="ShoppingListApp">
+	<head>
+		<title>Custom Services with .factory()</title>
+		<script src="../angular.min.js"></script>
+		<script src="./app.js"></script>
+	</head>
+	<body>
+		<h1>Custom Services with .factory()</h1>
+		<div ng-controller="ShoppingListController1 as controller1">
+			<h3>Can add unlimited items</h3>
+			<input type="text" ng-model="controller1.itemName" placeholder="item name">
+			<input type="text" ng-model="controller1.itemQuantity" placeholder="item quantity">
+			<button ng-click="controller1.addItem()">Add Item</button>
+			<div>
+				<ol>
+					<li ng-repeat="item in controller1.items">
+						{{item.itemQuantity}} of {{item.itemName}}
+						<button ng-click="controller1.remove($index)">Remove Item</button>
+					</li>
+				</ol>
+			</div>
+			<div>
+				Error: {{controller1.errorMsg}}
+			</div>
+		</div>
+		<div ng-controller="ShoppingListController2 as controller2">
+			<h3>Can add at most 3 items</h3>
+			<input type="text" ng-model="controller2.itemName" placeholder="item name">
+			<input type="text" ng-model="controller2.itemQuantity" placeholder="item quantity">
+			<button ng-click="controller2.addItem()">Add Item</button>
+			<div>
+				<ol>
+					<li ng-repeat="item in controller2.items">
+						{{item.itemQuantity}} of {{item.itemName}}
+						<button ng-click="controller2.remove($index)">Remove Item</button>
+					</li>
+				</ol>
+			</div>
+			<div>
+				Error: {{controller2.errorMsg}}
+			</div>
+		</div>
+	</body>
+</html>

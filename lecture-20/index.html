@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-	<head ng-app="ControllerAsApp">
+<html ng-app="ControllerAsApp">
+	<head>
 		<title>Controller as syntax</title>
 		<script src="../angular.min.js"></script>
 		<script src="./app.js"></script>
@@ -9,6 +9,12 @@
 		<h1>Controller As Syntax</h1>
 		<div ng-controller="ParentController1">
 			<div ng-contorller='ChildController1'></div>
+		</div>
+		<div ng-controller="ParentController2 as parent">
+			parent value is {{parent.value}}
+			<div ng-controller="ChildController2 as child">
+				child value is {{child.value}}
+			</div>
 		</div>
 	</body>
 </html>
