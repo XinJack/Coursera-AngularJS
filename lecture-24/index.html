@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="ShoppingListPromiseApp">
+	<head>
+		<title>Asynchronous Behavior with Promises and $q</title>
+		<script src="../angular.min.js"></script>
+		<script src="./app.js"></script>
+	</head>
+	<body>
+		<h1>Asynchronous Behavior with Promises and $q</h1>
+		<div ng-controller="ShoppingListController as list">			
+			<input type="text" ng-model="list.itemName" placeholder="Item Name">
+			<input type="text" ng-model="list.itemQuantity" placeholder="Item Quantity">
+			bags
+			<button ng-click="list.addItem()">Add Item to Shopping List</button>
+			<ul>
+				<li ng-repeat="item in list.items">
+					{{item.quantity}} bags of {{item.name}}
+					<button ng-click="list.removeItem($index)">Remove Item From Shopping List</button>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

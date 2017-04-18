@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="MenuCategoryApp">
+	<head>
+		<title>Using $http</title>
+		<script src="../angular.min.js"></script>
+		<script src="./app.js"></script>
+	</head>
+	<body>
+		<h1>Using $http</h1>
+		<div ng-controller="MenuCategoryController as menu">
+			<ul>
+				<li ng-repeat="category in menu.categories">
+					(<a href="" ng-click="menu.logCategoryMsg(category.short_name)">{{category.short_name}}</a>)
+					{{category.name}}
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
